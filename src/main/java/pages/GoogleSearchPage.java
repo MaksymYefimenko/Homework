@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class GoogleSearchPage {
+public class GoogleSearchPage extends BasePage{
     SelenideElement searchInput = $("[name=\"q\"]");
     SelenideElement searchButton = $("[name=\"btnK\"]");
 

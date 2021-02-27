@@ -11,14 +11,13 @@ import utils.AllureProperties;
 
 @Listeners({ScreenShooter.class})
 public class SelenideBase {
+
     @BeforeClass(description = "Setting up the Selenide")
     public void setUp() {
         Configuration.baseUrl = "https://www.google.com";
         Configuration.reportsFolder = "selenide-reports";
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-
-
     }
 
     @AfterClass(description = "Shutting down the selenide and copping allure.properties to report folder")
