@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    agent
+}
+
+dependencies {
+    // TestNG
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
+
+    // Selenide
+    // https://mvnrepository.com/artifact/com.codeborne/selenide
+    implementation group: 'com.codeborne', name: 'selenide', version: '5.19.0'
+
+    // Allure
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide
+    implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.13.7'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.13.7'
+    // https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+    agent group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.6'
+}
+
+test.doFirst {
+    jvmArgs "-javaagent:${configurations.agent.singleFile}"
+}
+
+test {
+    useTestNG()
+}
+
+
