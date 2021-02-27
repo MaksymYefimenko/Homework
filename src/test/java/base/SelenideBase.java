@@ -14,7 +14,7 @@ public class SelenideBase {
 
     @BeforeClass(description = "Setting up the Selenide")
     public void setUp() {
-        Configuration.baseUrl = "https://www.google.com";
+        Configuration.baseUrl = "https://www.saucedemo.com/";
         Configuration.reportsFolder = "selenide-reports";
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));

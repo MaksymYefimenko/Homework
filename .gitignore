@@ -3,3 +3,5 @@
 /build/
 /allure-results/
 /selenide-reports/
+/out/
+/build
