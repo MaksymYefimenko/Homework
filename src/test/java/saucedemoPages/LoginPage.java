@@ -11,11 +11,13 @@ public class LoginPage {
     SelenideElement passwordImput = $("#password");
     SelenideElement loginButton = $("#login-button");
 
+
     @Step("Setting username:{username}")
     public LoginPage setUserName(String username) {
         loginImput.shouldBe(Condition.visible).sendKeys(username);
         return this;
     }
+
     @Step("Setting password ")
     public LoginPage setPassword(String password) {
         passwordImput.shouldBe(Condition.visible).sendKeys(password);
@@ -23,9 +25,7 @@ public class LoginPage {
     }
 
     @Step("click the loginButton")
-    public void clickTheLogin(){
-        loginButton.shouldBe(Condition.visible).click();
-    }
-
+    public void clickTheLogin() {
+        loginButton.shouldBe(Condition.visible).click(); }
 
 }
