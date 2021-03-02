@@ -9,11 +9,11 @@ import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import saucedemoPages.CartPage;
 import saucedemoPages.LoginPage;
 import saucedemoPages.ProductPage;
 
-import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class SauceDemoTest extends SelenideBase {
@@ -49,7 +49,7 @@ public class SauceDemoTest extends SelenideBase {
     @Description("Klick your cart")
     public void test4() {
         SelenideElement klickYourCart;
-        new ProductPage().setKlickYourCart();
+        new CartPage().setKlickYourCart();
 
     }
 
@@ -58,7 +58,25 @@ public class SauceDemoTest extends SelenideBase {
     @Description("Klick your cart")
     public void test5() {
         SelenideElement removeYourCart;
-        new ProductPage().setRemoveYourCart();
+        new CartPage().setRemoveYourCart();
+
+    }
+    @Test()
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Klick continue shopping")
+    public void test6() {
+        SelenideElement continueShopping;
+        new CartPage().setContinueShopping();
+
+    }
+
+
+    @Test()
+    @Severity(SeverityLevel.NORMAL)
+    @Description("Return to product page ")
+    public void test7() {
+        SelenideElement returnToProductPage;
+        new CartPage().setReturnToProductPage();
 
     }
 }
